@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Planificador Creativo</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- pagina principal-->
+    <div class="contenedor-principal">
+        
+        <h1 class="titulo-principal"> Mi Planificador de Tareas Creativo </h1>
+
+        <!-- contenedor del formulario  y colmnas a la deecha-->
+        <div class="contenedor-dos-columnas">
+            
+            <!--  Formulario  -->
+            <div class="columna-izquierda-formulario">
+                <h2> Agregar Nueva Tarea</h2>
+                <form>
+                    <div class="grupo-formulario">
+                        <label for="nombre-tarea">Nombre de la tarea:</label>
+                        <input type="text" id="nombre-tarea" placeholder="Ej: Diseñar la interfaz principal">
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="fecha-limite">Fecha de cumplimiento:</label>
+                        <input type="date" id="fecha-limite">
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="estado-tarea">Estado inicial:</label>
+                        <select id="estado-tarea">
+                            <option value="hacer">Por hacer</option>
+                            <option value="en-curso">En curso</option>
+                            <option value="hecho">Hecho</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="boton-enviar">Guardar Tarea</button>
+                </form>
+            </div>
+
+            <!-- El Tablero con las columnas -->
+            <div class="columna-derecha-tablero">
+                
+                <!-- Columna // Por Hacer -->
+                <div class="columna-hacer">
+                    <h3>📌 Por Hacer (Backlog)</h3>
+                    <div class="tarjeta-tarea">
+                        <strong>Definir paleta de colores</strong>
+                        <span class="etiqueta-prioridad">Prioridad Alta</span>
+                        <p class="texto-fecha">📅 Vence: 18 Oct</p>
+                    </div>
+                </div>
+
+                <!-- Columna // En Curso -->
+                <div class="columna-en-curso">
+                    <h3>⏳ En Curso</h3>
+                    <div class="tarjeta-tarea tarjeta-en-curso">
+                        <strong>Estructura HTML con divs</strong>
+                        <span class="etiqueta-prioridad etiqueta-media">Prioridad Media</span>
+                        <p class="texto-fecha">📅 Vence: 20 Oct</p>
+                    </div>
+                </div>
+
+                <!-- Columna // Hecho -->
+                <div class="columna-hecho">
+                    <h3>✅ Hecho</h3>
+                    <div class="tarjeta-tarea tarjeta-hecho">
+                        <strong>Crear repositorio en GitHub</strong>
+                        <span class="etiqueta-prioridad etiqueta-baja">Completado</span>
+                        <p class="texto-fecha">📅 Completado</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
