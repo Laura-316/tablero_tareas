@@ -2,85 +2,57 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Planificador Creativo</title>
+    <title>Planificador de Tareas</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-    <!-- pagina principal-->
     <div class="contenedor-principal">
         
-        <h1 class="titulo-principal"> Mi Planificador de Tareas Creativo </h1>
+        <span class="titulo-seccion">Mi Planificador</span>
 
-        <!-- contenedor del formulario  y colmnas a la deecha-->
-        <div class="contenedor-dos-columnas">
-            
-            <!--  Formulario  -->
-            <div class="columna-izquierda-formulario">
-                <h2> Agregar Nueva Tarea</h2>
-                <form>
-                    <div class="grupo-formulario">
-                        <label for="nombre-tarea">Nombre de la tarea:</label>
-                        <input type="text" id="nombre-tarea" placeholder="Ej: Diseñar la interfaz principal">
-                    </div>
+        <!-- Campo 1: Tarea a realizar -->
+        <div class="campo-formulario">
+            <span class="etiqueta">Tarea a realizar:</span>
+            <input type="text" id="input-nombre-tarea" class="entrada-texto">
+        </div>
 
-                    <div class="grupo-formulario">
-                        <label for="fecha-limite">Fecha de cumplimiento:</label>
-                        <input type="date" id="fecha-limite">
-                    </div>
 
-                    <div class="grupo-formulario">
-                        <label for="estado-tarea">Estado inicial:</label>
-                        <select id="estado-tarea">
-                            <option value="hacer">Por hacer</option>
-                            <option value="en-curso">En curso</option>
-                            <option value="hecho">Hecho</option>
-                        </select>
-                    </div>
+        <!-- Campo 2: Estado de la tarea -->
+        <div class="campo-formulario">
+            <span class="etiqueta">Estado de la tarea:</span>
+            <select id="select-estado" class="entrada-texto">
+                <option value="">Seleccione...</option>
+                <option value="por-hacer">Por hacer</option>
+                <option value="en-proceso">En proceso</option>
+                <option value="entregado">Entregado</option>
+            </select>
+        </div>
 
-                    <button type="submit" class="boton-enviar">Guardar Tarea</button>
-                </form>
-            </div>
+        <!-- Campo 3: Fecha de entrega -->
+        <div class="campo-formulario">
+            <span class="etiqueta">Fecha de entrega:</span>
+            <input type="date" id="input-fecha" class="entrada-texto">
+        </div>
 
-            <!-- El Tablero con las columnas -->
-            <div class="columna-derecha-tablero">
-                
-                <!-- Columna // Por Hacer -->
-                <div class="columna-hacer">
-                    <h3>📌 Por Hacer (Backlog)</h3>
-                    <div class="tarjeta-tarea">
-                        <strong>Definir paleta de colores</strong>
-                        <span class="etiqueta-prioridad">Prioridad Alta</span>
-                        <p class="texto-fecha">📅 Vence: 18 Oct</p>
-                    </div>
-                </div>
+        
+        <!-- Campo 4: Asignado a -->
+        <div class="campo-formulario">
+            <span class="etiqueta">Asignado a:</span>
+            <input type="text" id="input-asignado" class="entrada-texto">
+        </div>
 
-                <!-- Columna // En Curso -->
-                <div class="columna-en-curso">
-                    <h3>⏳ En Curso</h3>
-                    <div class="tarjeta-tarea tarjeta-en-curso">
-                        <strong>Estructura HTML con divs</strong>
-                        <span class="etiqueta-prioridad etiqueta-media">Prioridad Media</span>
-                        <p class="texto-fecha">📅 Vence: 20 Oct</p>
-                    </div>
-                </div>
+        <!-- Botón de guardado -->
+        <button id="boton-guardar" class="boton-guardar">Guardar Tarea</button>
 
-                <!-- Columna // Hecho -->
-                <div class="columna-hecho">
-                    <h3>✅ Hecho</h3>
-                    <div class="tarjeta-tarea tarjeta-hecho">
-                        <strong>Crear repositorio en GitHub</strong>
-                        <span class="etiqueta-prioridad etiqueta-baja">Completado</span>
-                        <p class="texto-fecha">📅 Completado</p>
-                    </div>
-                </div>
-
-            </div>
-
+        <!-- Contenedor de lista -->
+        <div class="contenedor-lista">
+            <span class="subtitulo-seccion">Tareas Registradas</span>
+            <div id="contenedor-tarjetas"></div>
         </div>
 
     </div>
-
+     <script src="./TaskManager.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>

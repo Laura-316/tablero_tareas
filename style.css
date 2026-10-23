@@ -1,170 +1,113 @@
-/* Fondo general de la página en un azul claro suave y relajante */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #eaf4f8; 
+    background-color: #808cfc;
+    font-family: Arial, sans-serif;
     color: #333333;
-    margin: 0;
-    padding: 20px;
-}
-
-/* Contenedor principal centrado */
-.contenedor-principal {
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-/* Título principal */
-.titulo-principal {
-    text-align: center;
-    color: #3f51b5;
-    margin-bottom: 30px;
-}
-
-/* --- DISTRIBUCIÓN EN DOS COLUMNAS --- */
-.contenedor-dos-columnas {
     display: flex;
-    gap: 30px;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px 0;
 }
 
-/* LADO IZQUIERDO: Formulario destacado */
-.columna-izquierda-formulario {
-    flex: 1;
-    min-width: 280px;
-    background-color: #f0f4f8;
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 5px solid #5c6bc0;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+.contenedor-principal {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 6px;
+    border: 1px solid #dddddd;
+    width: 360px;
 }
 
-.columna-izquierda-formulario h2 {
-    margin-top: 0;
-    color: #3f51b5;
-    font-size: 1.2rem;
+.titulo-seccion {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
 }
 
-/* Estilos de los campos del formulario */
-.grupo-formulario {
+.campo-formulario {
     margin-bottom: 15px;
 }
 
-.grupo-formulario label {
+.etiqueta {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
-    color: #444444;
+    font-size: 14px;
 }
 
-.grupo-formulario input, 
-.grupo-formulario select {
+.entrada-texto {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #b0bec5;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-size: 1rem;
-    background-color: #ffffff;
-}
-
-/* Botón atractivo */
-.boton-enviar {
-    background-color: #5c6bc0;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s;
-}
-
-.boton-enviar:hover {
-    background-color: #3f51b5;
-}
-
-/* LADO DERECHO: El Tablero de Tareas */
-.columna-derecha-tablero {
-    flex: 2;
-    min-width: 300px;
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-/* Columnas individuales del tablero */
-.columna-hacer, .columna-en-curso, .columna-hecho {
-    flex: 1;
-    min-width: 200px;
-    background-color: #f7f9fa;
-    border-radius: 8px;
-    padding: 12px;
-    border-top: 4px solid #5c6bc0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-}
-
-.columna-en-curso {
-    border-top-color: #ffa726; 
-}
-
-.columna-hecho {
-    border-top-color: #66bb6a; 
-}
-
-.columna-hacer h3, .columna-en-curso h3, .columna-hecho h3 {
-    margin-top: 0;
-    font-size: 1rem;
-    color: #444444;
-}
-
-/* Tarjetas de tarea */
-.tarjeta-tarea {
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    border-left: 3px solid #5c6bc0;
-}
-
-.tarjeta-en-curso {
-    border-left-color: #ffa726;
-}
-
-.tarjeta-hecho {
-    border-left-color: #66bb6a;
-}
-
-.texto-fecha {
-    font-size: 0.85rem;
-    color: #666;
-    margin: 5px 0 0 0;
-}
-
-/* Etiquetas de prioridad (span) */
-.etiqueta-prioridad {
-    display: inline-block;
-    background-color: #ffebee;
-    color: #c62828;
-    font-size: 0.7rem;
-    padding: 2px 5px;
+    padding: 8px;
+    border: 1px solid #cccccc;
     border-radius: 4px;
-    margin-left: 5px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+.boton-guardar {
+    background-color: #f95489;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
     font-weight: bold;
+    margin-bottom: 20px;
 }
 
-.etiqueta-media {
-    background-color: #fff3e0;
-    color: #ef6c00;
+/* LISTA DE TAREAS Y TARJETAS */
+.contenedor-lista {
+    border-top: 1px solid #eeeeee;
+    padding-top: 15px;
 }
 
-.etiqueta-baja {
-    background-color: #e8f5e9;
-    color: #2e7d32;
+.subtitulo-seccion {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.tarjeta-tarea {
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    padding: 10px 12px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detalles-tarea {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.asignado-tarea {
+    font-weight: bold;
+    font-size: 13px;
+    color: #222222;
+}
+
+.descripcion-tarea {
+    font-size: 13px;
+    color: #5db2ee;
+}
+
+.fecha-tarea {
+    font-size: 11px;
+    color: #17231f;
+}
+
+.estado-tarea {
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    background-color: #e8e8e8;
+    color: #444444;
+    font-weight: bold;
 }
