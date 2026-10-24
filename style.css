@@ -1,7 +1,15 @@
+:root {
+    --color-fondo-header: #0F172A;      /* Azul Marino Profundo */
+    --color-brillante: #00FF87;         /* Verde Neón/Menta Muy Llamativo */
+    --color-brillante-hover: #00D970;   /* Verde más oscuro al pasar el ratón */
+    --color-texto-blanco: #FFFFFF;
+    --color-texto-suave: #94A3B8;
+}
+
 body {
-    background-color: #808cfc;
+    background-color: var(--color-fondo-header);
     font-family: Arial, sans-serif;
-    color: #333333;
+    color: var(--color-texto-blanco);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,10 +19,11 @@ body {
 }
 
 .contenedor-principal {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
     padding: 25px;
-    border-radius: 6px;
-    border: 1px solid #dddddd;
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     width: 360px;
 }
 
@@ -24,6 +33,7 @@ body {
     margin-bottom: 20px;
     display: block;
     text-align: center;
+    color: var(--color-texto-blanco);
 }
 
 .campo-formulario {
@@ -34,33 +44,51 @@ body {
     display: block;
     margin-bottom: 5px;
     font-size: 14px;
+    color: var(--color-texto-suave);
 }
 
 .entrada-texto {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    border-radius: 8px;
     box-sizing: border-box;
-    background-color: #ffffff;
+    background-color: var(--color-fondo-header);
+    color: var(--color-texto-blanco);
     font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.entrada-texto:focus {
+    border-color: var(--color-brillante);
+    box-shadow: 0 0 0 3px rgba(0, 255, 135, 0.2);
 }
 
 .boton-guardar {
-    background-color: #f95489;
-    color: #ffffff;
-    padding: 10px;
+    background-color: var(--color-brillante);
+    color: var(--color-fondo-header);
+    padding: 11px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     width: 100%;
     cursor: pointer;
     font-weight: bold;
     margin-bottom: 20px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.boton-guardar:hover {
+    background-color: var(--color-brillante-hover);
+}
+
+.boton-guardar:active {
+    transform: scale(0.98);
 }
 
 /* LISTA DE TAREAS Y TARJETAS */
 .contenedor-lista {
-    border-top: 1px solid #eeeeee;
+    border-top: 1px solid rgba(148, 163, 184, 0.25);
     padding-top: 15px;
 }
 
@@ -69,13 +97,15 @@ body {
     font-weight: bold;
     margin-bottom: 12px;
     display: block;
+    color: var(--color-texto-blanco);
 }
 
 .tarjeta-tarea {
-    background-color: #fafafa;
-    border: 1px solid #e0e0e0;
-    padding: 10px 12px;
-    border-radius: 4px;
+    background-color: var(--color-fondo-header);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-left: 4px solid var(--color-brillante);
+    padding: 12px 14px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -90,24 +120,32 @@ body {
 .asignado-tarea {
     font-weight: bold;
     font-size: 13px;
-    color: #222222;
+    color: var(--color-texto-blanco);
 }
 
 .descripcion-tarea {
     font-size: 13px;
-    color: #5db2ee;
+    color: var(--color-texto-suave);
 }
 
 .fecha-tarea {
     font-size: 11px;
-    color: #17231f;
+    font-weight: bold;
+    color: var(--color-brillante);
 }
 
 .estado-tarea {
     font-size: 11px;
-    padding: 4px 8px;
-    border-radius: 3px;
-    background-color: #e8e8e8;
-    color: #444444;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background-color: rgba(0, 255, 135, 0.12);
+    color: var(--color-brillante);
+    border: 1px solid rgba(0, 255, 135, 0.4);
     font-weight: bold;
+}
+
+/* Para que el calendario y la flecha del select se vean claros */
+input[type="date"],
+select {
+    color-scheme: dark;
 }
